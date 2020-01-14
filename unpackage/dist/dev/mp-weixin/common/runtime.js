@@ -1,5 +1,5 @@
 
-  !function(){try{var a=Function("return this")();a&&!a.Math&&(Object.assign(a,{Array:Array,Date:Date,Error:Error,Function:Function,Math:Math,Object:Object,RegExp:RegExp,String:String,TypeError:TypeError,setTimeout:setTimeout,clearTimeout:clearTimeout,setInterval:setInterval,clearInterval:clearInterval}),"undefined"!=typeof Reflect&&(a.Reflect=Reflect))}catch(a){}}();
+  !function(){try{var a=Function("return this")();a&&!a.Math&&(Object.assign(a,{isFinite:isFinite,Array:Array,Date:Date,Error:Error,Function:Function,Math:Math,Object:Object,RegExp:RegExp,String:String,TypeError:TypeError,setTimeout:setTimeout,clearTimeout:clearTimeout,setInterval:setInterval,clearInterval:clearInterval}),"undefined"!=typeof Reflect&&(a.Reflect=Reflect))}catch(a){}}();
   /******/ (function(modules) { // webpackBootstrap
 /******/ 	// install a JSONP callback for chunk loading
 /******/ 	function webpackJsonpCallback(data) {
@@ -104,11 +104,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"components/uni-icons/uni-icons":1,"components/uni-number-box/uni-number-box":1,"components/join-us/join-us":1};
+/******/ 		var cssChunks = {"components/join-us/join-us":1,"components/uni-icons/uni-icons":1,"components/uni-number-box/uni-number-box":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"components/uni-icons/uni-icons":"components/uni-icons/uni-icons","components/uni-number-box/uni-number-box":"components/uni-number-box/uni-number-box","components/join-us/join-us":"components/join-us/join-us"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"components/join-us/join-us":"components/join-us/join-us","components/uni-icons/uni-icons":"components/uni-icons/uni-icons","components/uni-number-box/uni-number-box":"components/uni-number-box/uni-number-box"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {

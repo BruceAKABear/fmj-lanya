@@ -129,7 +129,7 @@
 		},
 		methods: {
 			...mapMutations(['setGoodsObjectArray', 'setMachObject', 'setVoucherState', 'setCommitGoodsArray', 'setUserId',
-				'setDeviceImei', 'setOpenLocation', 'setDeviceId', 'setversionRight'
+				'setDeviceImei', 'setOpenLocation', 'setDeviceId', 'setversionRight', 'setBlueToothOpen', 'setIsFirst'
 			]),
 
 			openUserPro() {
@@ -327,7 +327,7 @@
 				if (this.commitGoodsArray.length == 0) {
 					return
 				} else {
-					uni.navigateTo({
+					uni.reLaunch({
 						url: '../order/order'
 					})
 				}
@@ -511,131 +511,185 @@
 			},
 			connectBle() {
 				var that = this
-				uni.openBluetoothAdapter({
-					success(res) {
-						if (that.deviceId && that.deviceId != '') {
-							uni.stopBluetoothDevicesDiscovery({
-								success(res) {
-									//连接蓝牙
-									uni.createBLEConnection({
-										deviceId: that.deviceId,
-										success(res) {
-											console.log('连接蓝牙成功', res)
-											//即使知道了特征id也要搜索一下
-											uni.getBLEDeviceCharacteristics({
-												deviceId: that.deviceId,
-												serviceId: that.mainUUID,
-												success(res) {
-													uni.notifyBLECharacteristicValueChange({
-														state: true,
-														deviceId: that.deviceId,
-														serviceId: that.mainUUID,
-														characteristicId: that.notifyUUID,
-														success(res) {
-															console.log('开启监听服务成功')
-															//写入Q01
-															uni.writeBLECharacteristicValue({
-																deviceId: that.deviceId,
-																serviceId: that.mainUUID,
-																characteristicId: that.writeUUID,
-																value: String2Ab(that.checkOnlineOrder),
-																success(res) {
-																	console.log('writeBLECharacteristicValue success', res.errMsg)
-																}
-															})
-														}
-													})
-												}
-											})
-										}
-									})
-								}
-							})
+				//1.判断手机蓝牙是否打开
+				console.warn('buy页面页面显示获取到的蓝牙状态为', that.blueToothOpen)
+				if (that.blueToothOpen) {
+					if (that.deviceId != '') {
+						//如果设备id存在就直接连接，同时下发Q01
+						uni.createBLEConnection({
+							deviceId: that.deviceId,
+							success(res) {
+								console.log('连接蓝牙成功', res)
+								//即使知道了特征id也要搜索一下
+								uni.getBLEDeviceCharacteristics({
+									deviceId: that.deviceId,
+									serviceId: '6E400001-B5A3-F393-E0A9-E50E24DCCA9E',
+									success(res) {
+										uni.notifyBLECharacteristicValueChange({
+											state: true,
+											deviceId: that.deviceId,
+											serviceId: '6E400001-B5A3-F393-E0A9-E50E24DCCA9E',
+											characteristicId: '6E400003-B5A3-F393-E0A9-E50E24DCCA9E',
+											success(res) {
+												console.log('开启监听服务成功')
+												//写入Q01
+												uni.writeBLECharacteristicValue({
+													deviceId: that.deviceId,
+													serviceId: '6E400001-B5A3-F393-E0A9-E50E24DCCA9E',
+													characteristicId: '6E400002-B5A3-F393-E0A9-E50E24DCCA9E',
+													value: String2Ab('AABB00065130313D3140CB'),
+													success(res) {
+														console.info('下发在线命令成功')
+														//只要调用了就不是第一次了
+														that.setIsFirst(false)
+													}
+												})
+											}
+										})
+									}
+								})
+							},
+							fail(res) {
+								console.warn('重新连接后错误', res)
 
-						} else {
-							var searchTimeoutId = setTimeout(function() {
-								if (that.deviceId == '') {
-									console.error('未搜索到设备')
-									uni.stopBluetoothDevicesDiscovery({
-										success(res) {
-											uni.showModal({
-												title: '',
-												content: '未搜索到设备,请靠近设备后重试',
-												showCancel: false,
-												success: (res) => {
-													if (res.confirm) {
-														uni.reLaunch({
-															url: '../index/index'
+							}
+						})
+
+					} else {
+						//如果设备id不存在就信搜索设备后连接
+						//1. 超时提示
+						var searchTimeoutId = setTimeout(function() {
+							if (that.deviceId == '') {
+								console.error('未搜索到设备')
+								uni.stopBluetoothDevicesDiscovery({
+									success(res) {
+										uni.showModal({
+											title: '',
+											content: '未搜索到设备,请靠近设备后重试',
+											showCancel: false,
+											success: (res) => {
+												if (res.confirm) {
+													uni.reLaunch({
+														url: '../index/index'
+													})
+
+												}
+											}
+										})
+									}
+								})
+							}
+						}, 5000)
+						uni.startBluetoothDevicesDiscovery({
+							success(res) {
+								uni.onBluetoothDeviceFound(function(res) {
+									let device = res.devices[0]
+									console.log('device', device)
+									if (device.localName != '' && device.localName == that.deviceNamePrefix + that.deviceImei) {
+										clearTimeout(searchTimeoutId)
+										that.setDeviceId(device.deviceId)
+										uni.stopBluetoothDevicesDiscovery({
+											success(res) {
+												console.log('找到设备后关闭发现服务成功', device.deviceId)
+												//连接蓝牙
+												uni.createBLEConnection({
+													deviceId: device.deviceId,
+													success(res) {
+														console.log('连接蓝牙成功', res)
+														//即使知道了特征id也要搜索一下
+														uni.getBLEDeviceCharacteristics({
+															deviceId: device.deviceId,
+															serviceId: '6E400001-B5A3-F393-E0A9-E50E24DCCA9E',
+															success(res) {
+																uni.notifyBLECharacteristicValueChange({
+																	state: true,
+																	deviceId: device.deviceId,
+																	serviceId: '6E400001-B5A3-F393-E0A9-E50E24DCCA9E',
+																	characteristicId: '6E400003-B5A3-F393-E0A9-E50E24DCCA9E',
+																	success(res) {
+																		console.log('开启监听服务成功')
+																		//写入Q01
+																		uni.writeBLECharacteristicValue({
+																			deviceId: device.deviceId,
+																			serviceId: '6E400001-B5A3-F393-E0A9-E50E24DCCA9E',
+																			characteristicId: '6E400002-B5A3-F393-E0A9-E50E24DCCA9E',
+																			value: String2Ab('AABB00065130313D3140CB'),
+																			success(res) {
+																				console.info('下发Q01成功')
+																				//只要调用了就不是第一次了
+																				that.setIsFirst(false)
+																			}
+																		})
+																	}
+																})
+															}
 														})
 
 													}
-												}
-											})
-										}
-									})
-								}
-							}, 5000)
-							uni.startBluetoothDevicesDiscovery({
-								success(res) {
-									uni.onBluetoothDeviceFound(function(res) {
-										let device = res.devices[0]
-										console.log('device', device)
-										if (device.name != '' && device.name == that.deviceNamePrefix + that.deviceImei) {
-											that.setDeviceId(device.deviceId)
-											clearTimeout(searchTimeoutId)
-											uni.stopBluetoothDevicesDiscovery({
-												success(res) {
-													console.log('找到设备后关闭发现服务成功', device.deviceId)
-													//连接蓝牙
-													uni.createBLEConnection({
-														deviceId: device.deviceId,
-														success(res) {
-															console.log('连接蓝牙成功', res)
-															//即使知道了特征id也要搜索一下
-															uni.getBLEDeviceCharacteristics({
-																deviceId: device.deviceId,
-																serviceId: that.mainUUID,
-																success(res) {
-																	uni.notifyBLECharacteristicValueChange({
-																		state: true,
-																		deviceId: device.deviceId,
-																		serviceId: that.mainUUID,
-																		characteristicId: that.notifyUUID,
-																		success(res) {
-																			console.log('开启监听服务成功')
-																			//写入Q01
-																			uni.writeBLECharacteristicValue({
-																				deviceId: device.deviceId,
-																				serviceId: that.mainUUID,
-																				characteristicId: that.writeUUID,
-																				value: String2Ab(that.checkOnlineOrder),
-																				success(res) {
-																					console.log('writeBLECharacteristicValue success', res.errMsg)
-																				}
-																			})
-																		}
-																	})
-																}
-															})
+												})
+											}
+										})
+									}
+								})
+							}
+						})
 
-														}
-													})
-												}
-											})
-										}
-									})
-								}
-							})
+					}
 
+				} else {
+					//未开启蓝牙提示开启蓝牙
+					uni.showModal({
+						title: '提示',
+						content: '请开启手机蓝牙',
+						showCancel: false,
+						success: (res) => {
+							if (res.confirm) {
+								console.info('提示用户开启蓝牙后用户点击确认')
+							}
 						}
+					})
+				}
+			},
+			getAndListenBTState() {
+				var that = this
+				uni.openBluetoothAdapter({
+					success(res) {
+						console.warn('开启适配器状态成功，意味着蓝牙开启', res)
+						that.setBlueToothOpen(true)
+						that.connectBle()
+					},
+					fail(res) {
+						//开启失败的话说明没有开启手机蓝牙
+						console.warn('开启适配器失败，意味着没有开启蓝牙', res)
+						that.connectBle()
 					}
 				})
+				//监听手机蓝牙状态
+				uni.onBluetoothAdapterStateChange(function(res) {
+					console.warn('监听蓝牙的状态', res)
+					if ((!that.isFirst) && res.available && (!res.discovering)) {
+						uni.$emit('runtimebtreopen', '')
+					} else if ((!that.isFirst) && (!res.available) && (!res.discovering)) {
+						uni.showModal({
+							title: '提示',
+							content: '使用小程序时请开启手机蓝牙功能',
+							showCancel: false,
+							success: (res) => {
+								if (res.confirm) {
+
+								}
+							}
+						})
+					}
+				})
+
 			}
 
 		},
 		computed: {
 			...mapState(['deviceImei', 'baseRequestUrl', 'commitGoodsArray', 'goodsObjectArray', 'bleConnected', 'deviceId',
-				'deviceNamePrefix', 'mainUUID', 'writeUUID', 'checkOnlineOrder', 'notifyUUID', 'versionRight', 'battery'
+				'deviceNamePrefix', 'mainUUID', 'writeUUID', 'checkOnlineOrder', 'notifyUUID', 'versionRight', 'battery',
+				'blueToothOpen', 'isFirst', 'platform'
 			]),
 			havaSelectGoods() {
 				return this.commitGoodsArray.length != 0
@@ -660,6 +714,31 @@
 		},
 		//页面加载时查询运营商的banner
 		onLoad(params) {
+			this.setDeviceIdFromPath(params)
+			var that = this
+			uni.$once('runtimebtreopen', function(data) {
+				if ('android' == that.platform) {
+					console.warn('android系统')
+					uni.closeBluetoothAdapter({
+						success(res) {
+							console.log('重连时关闭适配器成功')
+							uni.openBluetoothAdapter({
+								success(res) {
+									that.setDeviceId('')
+									that.connectBle()
+								}
+							})
+						},
+						fail(res) {
+							console.error('重连时关闭适配器失败', res)
+
+						}
+					})
+				} else {
+					//ios直连
+					that.connectBle()
+				}
+			})
 			//用户静默登录
 			this.userLogin()
 			//封装请求参数
@@ -669,9 +748,8 @@
 		},
 
 		onShow() {
-			//判断微信版本是否正确
-			//this.judgePlatformVersion()
-			this.connectBle()
+			//
+			this.getAndListenBTState()
 		},
 		onHide() {
 			//关闭蓝牙连接

@@ -19,7 +19,7 @@ const store = new Vuex.Store({
 		//用户id
 		userId: '',
 		//设备imei
-		deviceImei: '6000000c',
+		deviceImei: '',
 		//查询出来的设备的id
 		deviceId: '',
 		//真实设备名称
@@ -47,9 +47,18 @@ const store = new Vuex.Store({
 		//小程序版本是否正确
 		versionRight: false,
 		//电量信息
-		battery: 0
+		battery: 0,
+		//是否第一次进入小程序
+		isFirst: true,
+		platform: 'ios'
 	},
 	mutations: {
+		setPlatform(state, platform) {
+			state.platform = platform
+		},
+		setIsFirst(state, isfirst) {
+			state.isFirst = isfirst
+		},
 		setbattery(state, battery) {
 			state.battery = battery
 		},
@@ -107,10 +116,6 @@ const store = new Vuex.Store({
 		//设置手机蓝牙连接状态
 		setBleConnected(state, status) {
 			state.bleConnected = status
-		},
-		//设置充电状态
-		setCharging(state, charging) {
-			state.charging = charging
 		},
 		//设置设备相应的命令
 		setResponseOrder(state, responseOrder) {

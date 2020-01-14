@@ -9,7 +9,6 @@
 .list-content {
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	padding-top: 30rpx;
 	padding-bottom: 30rpx;
@@ -23,8 +22,7 @@
 	margin-left: 20rpx;
 	padding: 0;
 	max-width: 350rpx;
-	-o-text-overflow: ellipsis;
-	   text-overflow: ellipsis;
+	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;
 }
@@ -34,12 +32,10 @@
 	text-align: left;
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
-	    -ms-flex-direction: column;
 	        flex-direction: column;
 }
 .list-summery {
@@ -55,7 +51,6 @@
 	position: absolute;
 	left: 50%;
 	-webkit-transform: translate(-50%);
-	    -ms-transform: translate(-50%);
 	        transform: translate(-50%);
 	bottom: 40%;
 	width: 600rpx;
@@ -72,7 +67,6 @@
 	position: absolute;
 	left: 50%;
 	-webkit-transform: translate(-50%);
-	    -ms-transform: translate(-50%);
 	        transform: translate(-50%);
 	bottom: 40%;
 	width: 600rpx;
@@ -89,20 +83,16 @@
 .youhui-code {
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-pack: start;
 	-webkit-justify-content: flex-start;
-	    -ms-flex-pack: start;
 	        justify-content: flex-start;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
-	    -ms-flex-align: center;
 	        align-items: center;
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: row;
-	    -ms-flex-direction: row;
 	        flex-direction: row;
 	margin-top: 60rpx;
 	margin-bottom: 20rpx;
@@ -119,16 +109,13 @@
 	left: 50%;
 	width: 600rpx;
 	-webkit-transform: translate(-50%);
-	    -ms-transform: translate(-50%);
 	        transform: translate(-50%);
 	bottom: 33%;
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
-	    -ms-flex-pack: center;
 	        justify-content: center;
 	font-size: 30rpx;
 	color: #B2B2B2;
@@ -136,12 +123,10 @@
 .inner-agree-doc {
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: row;
-	    -ms-flex-direction: row;
 	        flex-direction: row;
 }
 .inpclass {

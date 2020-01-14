@@ -1,18 +1,17 @@
 {
-	"pages": [
+	"pages": [{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "自助售货机"
+			}
+		},
 		{
 			"path": "pages/buy/buy",
 			"style": {
 				"navigationBarTitleText": "商品购买"
 			}
 		},
-		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "自助售货机"
-			}
-		},
-		
+
 		{
 			"path": "pages/order/order",
 			"style": {

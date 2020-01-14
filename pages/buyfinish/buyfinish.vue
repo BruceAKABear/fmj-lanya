@@ -35,7 +35,7 @@
 				<text class="buyfinish-main-callservice-text">若售货机未开门,请联系客服</text>
 			</view> -->
 			<view class="buyfinish-main-call-box" @tap="lianxikefu()">
-				<image class="buyfinish-main-callservice-kefunv"  src="../../static/kefunv.png"  mode="widthFix"></image>
+				<image class="buyfinish-main-callservice-kefunv" src="../../static/kefunv.png" mode="widthFix"></image>
 				<text>联系客服</text>
 			</view>
 			<view class="buyfinish-main-gobackindex-box" @tap="gobackmian()">
@@ -78,17 +78,32 @@
 				uni.reLaunch({
 					url: '../index/index'
 				})
+			},
+			closeBle() {
+				var that = this
+				//关闭连接
+				uni.closeBLEConnection({
+					deviceId: that.deviceId,
+					success(res) {
+						uni.closeBluetoothAdapter({
+							success(res) {
+								console.log('页面隐藏后关闭蓝牙成功')
+							}
+						})
+					}
+				})
 			}
 
 		},
-		onShow() {
+		onLoad() {
+			this.closeBle()
 			//页面再次显示的时候直接跳转到主页
 			// uni.reLaunch({
 			// 	url: '../index/index'
 			// })
 		},
 		computed: {
-			...mapState(['userId', 'goodsObjectArray', 'machObject']),
+			...mapState(['userId', 'goodsObjectArray', 'machObject', 'deviceId']),
 			totalPrice() {
 				let pric = 0
 				let goa = this.goodsObjectArray

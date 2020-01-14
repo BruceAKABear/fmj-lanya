@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/buy/buy",
     "pages/index/index",
+    "pages/buy/buy",
     "pages/order/order",
     "pages/buyfinish/buyfinish"
   ],
@@ -18,5 +18,5 @@
     }
   },
   "usingComponents": {},
-  "sitemapLocation": "sitemap96.json"
+  "sitemapLocation": "sitemap86.json"
 }

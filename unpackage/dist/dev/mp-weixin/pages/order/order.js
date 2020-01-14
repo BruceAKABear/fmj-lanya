@@ -1,9 +1,9 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pages/order/order"],{
 
 /***/ 34:
-/*!***************************************************************************************************!*\
-  !*** C:/Users/bear/Documents/HBuilderProjects/fmj-lanya/main.js?{"page":"pages%2Forder%2Forder"} ***!
-  \***************************************************************************************************/
+/*!********************************************************************************!*\
+  !*** C:/Users/blab/Desktop/fmj-lanya/main.js?{"page":"pages%2Forder%2Forder"} ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18,20 +18,21 @@ createPage(_order.default);
 /***/ }),
 
 /***/ 35:
-/*!********************************************************************************!*\
-  !*** C:/Users/bear/Documents/HBuilderProjects/fmj-lanya/pages/order/order.vue ***!
-  \********************************************************************************/
+/*!*************************************************************!*\
+  !*** C:/Users/blab/Desktop/fmj-lanya/pages/order/order.vue ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _order_vue_vue_type_template_id_305fcb26___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./order.vue?vue&type=template&id=305fcb26& */ 36);
+/* harmony import */ var _order_vue_vue_type_template_id_12a546ec___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./order.vue?vue&type=template&id=12a546ec& */ 36);
 /* harmony import */ var _order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./order.vue?vue&type=script&lang=js& */ 38);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 /* harmony import */ var _order_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./order.vue?vue&type=style&index=0&lang=css& */ 40);
-/* harmony import */ var _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/runtime/componentNormalizer.js */ 16);
+/* harmony import */ var _HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js */ 16);
 
+var renderjs
 
 
 
@@ -39,58 +40,68 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+var component = Object(_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _order_vue_vue_type_template_id_305fcb26___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _order_vue_vue_type_template_id_305fcb26___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _order_vue_vue_type_template_id_12a546ec___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _order_vue_vue_type_template_id_12a546ec___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
-  null
-  
+  null,
+  false,
+  _order_vue_vue_type_template_id_12a546ec___WEBPACK_IMPORTED_MODULE_0__["components"],
+  renderjs
 )
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "Documents/HBuilderProjects/fmj-lanya/pages/order/order.vue"
+component.options.__file = "fmj-lanya/pages/order/order.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
 /***/ 36:
-/*!***************************************************************************************************************!*\
-  !*** C:/Users/bear/Documents/HBuilderProjects/fmj-lanya/pages/order/order.vue?vue&type=template&id=305fcb26& ***!
-  \***************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
+/*!********************************************************************************************!*\
+  !*** C:/Users/blab/Desktop/fmj-lanya/pages/order/order.vue?vue&type=template&id=12a546ec& ***!
+  \********************************************************************************************/
+/*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_hbuilderx_packages_webpack_uni_nvue_loader_lib_templateLoader_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_template_id_305fcb26___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/webpack-uni-nvue-loader/lib/templateLoader.js??vue-loader-options!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib??vue-loader-options!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-custom-block-loader??ref--0-1!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./order.vue?vue&type=template&id=305fcb26& */ 37);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_hbuilderx_packages_webpack_uni_nvue_loader_lib_templateLoader_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_template_id_305fcb26___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_template_id_12a546ec___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!../../../HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!../../../HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!../../../HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!../../../HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./order.vue?vue&type=template&id=12a546ec& */ 37);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_template_id_12a546ec___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_hbuilderx_packages_webpack_uni_nvue_loader_lib_templateLoader_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_template_id_305fcb26___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_template_id_12a546ec___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return _HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_template_id_12a546ec___WEBPACK_IMPORTED_MODULE_0__["recyclableRender"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "components", function() { return _HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_template_id_12a546ec___WEBPACK_IMPORTED_MODULE_0__["components"]; });
 
 
 
 /***/ }),
 
 /***/ 37:
-/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-hbuilderx/packages/webpack-uni-nvue-loader/lib/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-custom-block-loader??ref--0-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/bear/Documents/HBuilderProjects/fmj-lanya/pages/order/order.vue?vue&type=template&id=305fcb26& ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/blab/Desktop/fmj-lanya/pages/order/order.vue?vue&type=template&id=12a546ec& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return recyclableRender; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
+var components
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
 }
+var recyclableRender = false
 var staticRenderFns = []
 render._withStripped = true
 
@@ -99,25 +110,25 @@ render._withStripped = true
 /***/ }),
 
 /***/ 38:
-/*!*********************************************************************************************************!*\
-  !*** C:/Users/bear/Documents/HBuilderProjects/fmj-lanya/pages/order/order.vue?vue&type=script&lang=js& ***!
-  \*********************************************************************************************************/
+/*!**************************************************************************************!*\
+  !*** C:/Users/blab/Desktop/fmj-lanya/pages/order/order.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/babel-loader/lib!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib??vue-loader-options!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-custom-block-loader??ref--0-1!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./order.vue?vue&type=script&lang=js& */ 39);
-/* harmony import */ var _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); 
+/* harmony import */ var _HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../HBuilderX/plugins/uniapp-cli/node_modules/babel-loader/lib!../../../HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!../../../HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!../../../HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!../../../HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./order.vue?vue&type=script&lang=js& */ 39);
+/* harmony import */ var _HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
 /***/ 39:
-/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-custom-block-loader??ref--0-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/bear/Documents/HBuilderProjects/fmj-lanya/pages/order/order.vue?vue&type=script&lang=js& ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/blab/Desktop/fmj-lanya/pages/order/order.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -195,7 +206,7 @@ var _vuex = __webpack_require__(/*! vuex */ 12);function _objectSpread(target) {
       defaultImg: '../../static/prod.png',
       youhuiCode: null,
       placeholder: '兑换码不区分大小写',
-      cansubmit: false,
+      cansubmit: true,
       canSubmitClass: 'submit-button',
       canNotSubmitClass: 'can-not-submit' };
 
@@ -203,8 +214,8 @@ var _vuex = __webpack_require__(/*! vuex */ 12);function _objectSpread(target) {
   },
   methods: _objectSpread({},
   (0, _vuex.mapMutations)([
-  'setUserId', 'setDeviceId', 'setServiceId', 'setWriteServiceId', 'setNotifyServiceId', 'setCheckOnlineOrder',
-  'setDeviceName', 'setDeviceImei', 'setResponseOrder']), {
+  'setUserId', 'setDeviceId',
+  'setDeviceName', 'setDeviceImei', 'setResponseOrder', 'setIsFirst', 'setBlueToothOpen']), {
 
     changeRadioV: function changeRadioV() {
       this.checkV = !this.checkV;
@@ -225,40 +236,34 @@ var _vuex = __webpack_require__(/*! vuex */ 12);function _objectSpread(target) {
     gotoPay: function gotoPay() {
       var that = this;
       if (that.cansubmit) {
-        if (that.phoneBlueToothCanUse) {
-          //需要同意用户协议
-          if (!that.checkV) {
-            uni.showToast({
-              title: '请同意用户协议',
-              icon: 'none',
-              mask: true,
-              duration: 1500 });
+        //需要同意用户协议
+        if (!that.checkV) {
+          uni.showToast({
+            title: '请同意用户协议',
+            icon: 'none',
+            mask: true,
+            duration: 1500 });
 
-            return;
-          }
-          //按钮不可点
-          that.cansubmit = false;
-          if (that.bleConnectedStatus && that.writeServiceId != '') {
-            uni.showLoading({
-              title: '加载中' });
+          return;
+        }
+        //按钮不可点
+        that.cansubmit = false;
+        if (that.bleConnected) {
+          uni.showLoading({
+            title: '加载中' });
 
-            that.startService();
-          } else {
-            //蓝牙未连接，重新连接
-            uni.showModal({
-              title: '',
-              content: '设备连接中,请稍后重试',
-              showCancel: false,
-              success: function success(res) {
-                if (res.confirm) {
-                  that.cansubmit = true;
-                }
-              } });
-
-            return;
-          }
+          that.commitOrderRequstNetWork();
         } else {
-          that.judgeBlueToothCanUse();
+          uni.showModal({
+            title: '',
+            content: '设备连接中，请稍后',
+            showCancel: false,
+            success: function success(res) {
+              if (res.confirm) {
+
+              }
+            } });
+
         }
       }
     },
@@ -295,125 +300,81 @@ var _vuex = __webpack_require__(/*! vuex */ 12);function _objectSpread(target) {
                 uni.request({
                   url: that.baseRequestUrl + 'order/getRealOrder?sysOrderId=' + param.sysOrderId,
                   success: function success(res) {
-                    if (res.data.code === 1) {(function () {
-                        var chargeTimeOrder = res.data.order;
-                        /**
-                                                               * 包小于20字节就直接下发
-                                                               */
-                        if (chargeTimeOrder.length <= 40) {
-                          uni.writeBLECharacteristicValue({
-                            deviceId: that.deviceId,
-                            serviceId: that.serviceId,
-                            characteristicId: that.writeServiceId,
-                            value: (0, _index.String2Ab)(chargeTimeOrder),
-                            success: function success(res) {
-                              var chargeIntervalTimmerId = setInterval(function () {
-                                if (chargeTimeOrder.indexOf(that.responseOrder) != -1) {
-                                  clearInterval(chargeIntervalTimmerId);
-                                  clearTimeout(chargeTimeOutTimmerId);
+                    if (res.data.code === 1) {
+                      var chargeTimeOrder = res.data.order;
+                      /**
+                                                             * 包小于20字节就直接下发
+                                                             */
+                      if (chargeTimeOrder.length <= 40) {
+                        uni.writeBLECharacteristicValue({
+                          deviceId: that.deviceId,
+                          serviceId: '6E400001-B5A3-F393-E0A9-E50E24DCCA9E',
+                          characteristicId: '6E400002-B5A3-F393-E0A9-E50E24DCCA9E',
+                          value: (0, _index.String2Ab)(chargeTimeOrder),
+                          success: function success(res) {
+                            console.warn('下发真实命令成功', res);
+                            uni.writeBLECharacteristicValue({
+                              deviceId: that.deviceId,
+                              serviceId: '6E400001-B5A3-F393-E0A9-E50E24DCCA9E',
+                              characteristicId: '6E400002-B5A3-F393-E0A9-E50E24DCCA9E',
+                              value: (0, _index.String2Ab)(that.confirmOrder),
+                              success: function success(res) {
+                                console.warn('下发确认命令成功', res);
+                                uni.hideLoading();
+                                uni.redirectTo({
+                                  url: '../buyfinish/buyfinish',
+                                  complete: function complete(res) {
+                                    console.error('路由执行成功，结果为：', res);
+                                  } });
+
+                              },
+                              fail: function fail(res) {
+                                console.warn('下发确认命令失败', res);
+                              } });
+
+                          },
+                          fail: function fail(res) {
+                            console.warn('下发真实命令失败', res);
+
+                          } });
+
+
+
+                      } else {(function () {
+                          var orderTime = Math.floor(chargeTimeOrder.length / 40);
+                          //分包响应数据包
+                          that.setResponseOrder('');var _loop = function _loop(
+                          i) {
+                            uni.writeBLECharacteristicValue({
+                              deviceId: that.deviceId,
+                              serviceId: '6E400001-B5A3-F393-E0A9-E50E24DCCA9E',
+                              characteristicId: '6E400002-B5A3-F393-E0A9-E50E24DCCA9E',
+                              value: (0, _index.String2Ab)(chargeTimeOrder.substring(i * 40, (i + 1) * 40)),
+                              success: function success(res) {
+                                //延时并拼接响应
+                                (0, _index.sleep)(200);
+                                //在最后一包发送完以后，监听响应
+                                if (i == orderTime) {
                                   uni.writeBLECharacteristicValue({
                                     deviceId: that.deviceId,
-                                    serviceId: that.serviceId,
-                                    characteristicId: that.writeServiceId,
+                                    serviceId: '6E400001-B5A3-F393-E0A9-E50E24DCCA9E',
+                                    characteristicId: '6E400002-B5A3-F393-E0A9-E50E24DCCA9E',
                                     value: (0, _index.String2Ab)(that.confirmOrder),
                                     success: function success(res) {
-                                      uni.closeBLEConnection({
-                                        deviceId: that.deviceId,
-                                        success: function success(res) {} });
-
                                       uni.hideLoading();
-                                      uni.reLaunch({
-                                        url: '../buyfinish/buyfinish' });
+                                      uni.redirectTo({
+                                        url: '../buyfinish/buyfinish',
+                                        complete: function complete(res) {
+                                          console.error('路由执行成功，结果为：', res);
+                                        } });
 
                                     } });
 
                                 }
-                              }, 200);
-                              var chargeTimeOutTimmerId = setTimeout(function () {
-                                if (chargeTimeOrder.indexOf(that.responseOrder) === -1) {
-                                  clearInterval(chargeIntervalTimmerId);
-                                  uni.hideLoading();
-                                  uni.showModal({
-                                    title: '',
-                                    content: '设备异常正在退款,请稍后重试',
-                                    showCancel: false,
-                                    success: function success(res) {
-                                      if (res.confirm) {
-                                        //发起退款
-                                        uni.reLaunch({
-                                          url: '../index/index' });
+                              } });};for (var i = 0; i <= orderTime; i++) {_loop(i);
 
-
-                                      }
-                                    } });
-
-                                }
-                              }, 3000);
-                            } });
-
-
-                        } else {(function () {
-                            var orderTime = Math.floor(chargeTimeOrder.length / 40);
-                            //分包响应数据包
-                            that.setResponseOrder('');var _loop = function _loop(
-                            i) {
-                              uni.writeBLECharacteristicValue({
-                                deviceId: that.deviceId,
-                                serviceId: that.serviceId,
-                                characteristicId: that.writeServiceId,
-                                value: (0, _index.String2Ab)(chargeTimeOrder.substring(i * 40, (i + 1) * 40)),
-                                success: function success(res) {
-                                  //延时并拼接响应
-                                  (0, _index.sleep)(200);
-                                  //在最后一包发送完以后，监听响应
-                                  if (i == orderTime) {
-                                    var chargeTimeOutTimmerId = setTimeout(function () {
-                                      if (chargeTimeOrder.indexOf(that.responseOrder) === -1 || that.responseOrder === '') {
-                                        clearInterval(chargeIntervalTimmerId);
-                                        uni.hideLoading();
-                                        uni.showModal({
-                                          title: '',
-                                          content: '设备异常正在退款,请稍后重试',
-                                          showCancel: false,
-                                          success: function success(res) {
-                                            //发起退款
-                                            if (res.confirm) {
-                                              uni.reLaunch({
-                                                url: '../index/index' });
-
-                                            }
-                                          } });
-
-                                      }
-                                    }, 3000);
-                                    //定时判断是否相同
-                                    var chargeIntervalTimmerId = setInterval(function () {
-                                      if (that.responseOrder != '' && chargeTimeOrder.indexOf(that.responseOrder) != -1) {
-                                        clearInterval(chargeIntervalTimmerId);
-                                        clearTimeout(chargeTimeOutTimmerId);
-                                        uni.writeBLECharacteristicValue({
-                                          deviceId: that.deviceId,
-                                          serviceId: that.serviceId,
-                                          characteristicId: that.writeServiceId,
-                                          value: (0, _index.String2Ab)(that.confirmOrder),
-                                          success: function success(res) {
-                                            uni.closeBLEConnection({
-                                              deviceId: that.deviceId,
-                                              success: function success(res) {} });
-
-                                            uni.hideLoading();
-                                            uni.reLaunch({
-                                              url: '../buyfinish/buyfinish' });
-
-                                          } });
-
-                                      }
-                                    }, 200);
-                                  }
-                                } });};for (var i = 0; i <= orderTime; i++) {_loop(i);
-
-                            }})();
-                        }})();
+                          }})();
+                      }
 
                     } else {
                       //服务器响应失败
@@ -494,141 +455,191 @@ var _vuex = __webpack_require__(/*! vuex */ 12);function _objectSpread(target) {
     },
     connectBle: function connectBle() {
       var that = this;
+      //1.判断手机蓝牙是否打开
+      console.warn('buy页面页面显示获取到的蓝牙状态为', that.blueToothOpen);
+      if (that.blueToothOpen) {
+        if (that.deviceId != '') {
+          //如果设备id存在就直接连接，同时下发Q01
+          uni.createBLEConnection({
+            deviceId: that.deviceId,
+            success: function success(res) {
+              console.log('连接蓝牙成功', res);
+              //即使知道了特征id也要搜索一下
+              uni.getBLEDeviceCharacteristics({
+                deviceId: that.deviceId,
+                serviceId: '6E400001-B5A3-F393-E0A9-E50E24DCCA9E',
+                success: function success(res) {
+                  uni.notifyBLECharacteristicValueChange({
+                    state: true,
+                    deviceId: that.deviceId,
+                    serviceId: '6E400001-B5A3-F393-E0A9-E50E24DCCA9E',
+                    characteristicId: '6E400003-B5A3-F393-E0A9-E50E24DCCA9E',
+                    success: function success(res) {
+                      console.log('开启监听服务成功');
+                      //写入Q01
+                      uni.writeBLECharacteristicValue({
+                        deviceId: that.deviceId,
+                        serviceId: '6E400001-B5A3-F393-E0A9-E50E24DCCA9E',
+                        characteristicId: '6E400002-B5A3-F393-E0A9-E50E24DCCA9E',
+                        value: (0, _index.String2Ab)('AABB00065130313D3140CB'),
+                        success: function success(res) {
+                          console.info('下发在线命令成功');
+                          //只要调用了就不是第一次了
+                          that.setIsFirst(false);
+                        } });
+
+                    } });
+
+                } });
+
+            },
+            fail: function fail(res) {
+              console.warn('重新连接后错误', res);
+
+            } });
+
+
+        } else {
+          //如果设备id不存在就信搜索设备后连接
+          //1. 超时提示
+          var searchTimeoutId = setTimeout(function () {
+            if (that.deviceId == '') {
+              console.error('未搜索到设备');
+              uni.stopBluetoothDevicesDiscovery({
+                success: function success(res) {
+                  uni.showModal({
+                    title: '',
+                    content: '未搜索到设备,请靠近设备后重试',
+                    showCancel: false,
+                    success: function success(res) {
+                      if (res.confirm) {
+                        uni.reLaunch({
+                          url: '../index/index' });
+
+
+                      }
+                    } });
+
+                } });
+
+            }
+          }, 5000);
+          uni.startBluetoothDevicesDiscovery({
+            success: function success(res) {
+              uni.onBluetoothDeviceFound(function (res) {
+                var device = res.devices[0];
+                console.log('device', device);
+                if (device.name != '' && device.name == that.deviceNamePrefix + that.deviceImei) {
+                  clearTimeout(searchTimeoutId);
+                  that.setDeviceId(device.deviceId);
+                  uni.stopBluetoothDevicesDiscovery({
+                    success: function success(res) {
+                      console.log('找到设备后关闭发现服务成功', device.deviceId);
+                      //连接蓝牙
+                      uni.createBLEConnection({
+                        deviceId: device.deviceId,
+                        success: function success(res) {
+                          console.log('连接蓝牙成功', res);
+                          //即使知道了特征id也要搜索一下
+                          uni.getBLEDeviceCharacteristics({
+                            deviceId: device.deviceId,
+                            serviceId: '6E400001-B5A3-F393-E0A9-E50E24DCCA9E',
+                            success: function success(res) {
+                              uni.notifyBLECharacteristicValueChange({
+                                state: true,
+                                deviceId: device.deviceId,
+                                serviceId: '6E400001-B5A3-F393-E0A9-E50E24DCCA9E',
+                                characteristicId: '6E400003-B5A3-F393-E0A9-E50E24DCCA9E',
+                                success: function success(res) {
+                                  console.log('开启监听服务成功');
+                                  //写入Q01
+                                  uni.writeBLECharacteristicValue({
+                                    deviceId: device.deviceId,
+                                    serviceId: '6E400001-B5A3-F393-E0A9-E50E24DCCA9E',
+                                    characteristicId: '6E400002-B5A3-F393-E0A9-E50E24DCCA9E',
+                                    value: (0, _index.String2Ab)('AABB00065130313D3140CB'),
+                                    success: function success(res) {
+                                      console.info('下发Q01成功');
+                                      //只要调用了就不是第一次了
+                                      that.setIsFirst(false);
+                                    } });
+
+                                } });
+
+                            } });
+
+
+                        } });
+
+                    } });
+
+                }
+              });
+            } });
+
+
+        }
+
+      } else {
+        //未开启蓝牙提示开启蓝牙
+        uni.showModal({
+          title: '提示',
+          content: '请开启手机蓝牙',
+          showCancel: false,
+          success: function success(res) {
+            if (res.confirm) {
+              console.info('提示用户开启蓝牙后用户点击确认');
+            }
+          } });
+
+      }
+    },
+    getAndListenBTState: function getAndListenBTState() {
+      var that = this;
       uni.openBluetoothAdapter({
         success: function success(res) {
-          if (that.deviceId && that.deviceId != '') {
-            uni.stopBluetoothDevicesDiscovery({
-              success: function success(res) {
-                //连接蓝牙
-                uni.createBLEConnection({
-                  deviceId: that.deviceId,
-                  success: function success(res) {
-                    console.log('连接蓝牙成功', res);
-                    //即使知道了特征id也要搜索一下
-                    uni.getBLEDeviceCharacteristics({
-                      deviceId: that.deviceId,
-                      serviceId: that.mainUUID,
-                      success: function success(res) {
-                        uni.notifyBLECharacteristicValueChange({
-                          state: true,
-                          deviceId: that.deviceId,
-                          serviceId: that.mainUUID,
-                          characteristicId: that.notifyUUID,
-                          success: function success(res) {
-                            console.log('开启监听服务成功');
-                            //写入Q01
-                            uni.writeBLECharacteristicValue({
-                              deviceId: that.deviceId,
-                              serviceId: that.mainUUID,
-                              characteristicId: that.writeUUID,
-                              value: (0, _index.String2Ab)(that.checkOnlineOrder),
-                              success: function success(res) {
-                                console.log('writeBLECharacteristicValue success', res.errMsg);
-                              } });
-
-                          } });
-
-                      } });
-
-                  } });
-
-              } });
-
-
-          } else {
-            var searchTimeoutId = setTimeout(function () {
-              if (that.deviceId == '') {
-                console.error('未搜索到设备');
-                uni.stopBluetoothDevicesDiscovery({
-                  success: function success(res) {
-                    uni.showModal({
-                      title: '',
-                      content: '未搜索到设备,请靠近设备后重试',
-                      showCancel: false,
-                      success: function success(res) {
-                        if (res.confirm) {
-                          uni.reLaunch({
-                            url: '../index/index' });
-
-
-                        }
-                      } });
-
-                  } });
-
-              }
-            }, 5000);
-            uni.startBluetoothDevicesDiscovery({
-              success: function success(res) {
-                uni.onBluetoothDeviceFound(function (res) {
-                  var device = res.devices[0];
-                  console.log('device', device);
-                  if (device.name != '' && device.name == that.deviceNamePrefix + that.deviceImei) {
-                    that.setDeviceId(device.deviceId);
-                    clearTimeout(searchTimeoutId);
-                    uni.stopBluetoothDevicesDiscovery({
-                      success: function success(res) {
-                        console.log('找到设备后关闭发现服务成功', device.deviceId);
-                        //连接蓝牙
-                        uni.createBLEConnection({
-                          deviceId: device.deviceId,
-                          success: function success(res) {
-                            console.log('连接蓝牙成功', res);
-                            //即使知道了特征id也要搜索一下
-                            uni.getBLEDeviceCharacteristics({
-                              deviceId: device.deviceId,
-                              serviceId: that.mainUUID,
-                              success: function success(res) {
-                                uni.notifyBLECharacteristicValueChange({
-                                  state: true,
-                                  deviceId: device.deviceId,
-                                  serviceId: that.mainUUID,
-                                  characteristicId: that.notifyUUID,
-                                  success: function success(res) {
-                                    console.log('开启监听服务成功');
-                                    //写入Q01
-                                    uni.writeBLECharacteristicValue({
-                                      deviceId: device.deviceId,
-                                      serviceId: that.mainUUID,
-                                      characteristicId: that.writeUUID,
-                                      value: (0, _index.String2Ab)(that.checkOnlineOrder),
-                                      success: function success(res) {
-                                        console.log('writeBLECharacteristicValue success', res.errMsg);
-                                      } });
-
-                                  } });
-
-                              } });
-
-
-                          } });
-
-                      } });
-
-                  }
-                });
-              } });
-
-
-          }
+          console.warn('开启适配器状态成功，意味着蓝牙开启', res);
+          that.setBlueToothOpen(true);
+          that.connectBle();
+        },
+        fail: function fail(res) {
+          //开启失败的话说明没有开启手机蓝牙
+          console.warn('开启适配器失败，意味着没有开启蓝牙', res);
+          that.connectBle();
         } });
 
     },
-    needConnect: function needConnect() {
-      if (!bleConnected) {
-        //需要重新连接
-        this.connectBle();
-      }
+    listenResponseOrder: function listenResponseOrder() {
+      var that = this;
+      var timeLast = 0;
+      uni.onBLECharacteristicValueChange(function (res) {
+        if (new Date().getTime() - timeLast < 200) {
+          that.setResponseOrder(that.responseOrder + (0, _index.Ab2String)(res.value));
+          console.log('分包相应的结果合并为', that.responseOrder);
+        } else {
+          timeLast = new Date().getTime();
+          var resOrder = (0, _index.Ab2String)(res.value);
+          if (resOrder.indexOf('5130383D') != -1) {
+            var batteryNumber = resOrder.substring(8, 12);
+            that.setbattery(parseInt(String.fromCharCode(parseInt(batteryNumber.substring(0, 2), 16)) + String.fromCharCode(
+            parseInt(batteryNumber.substring(2), 16))));
+          } else {
+            that.setResponseOrder(resOrder);
+          }
+          console.log('监听到设备的响应为', resOrder);
+        }
+
+      });
     } }),
 
 
   computed: _objectSpread({},
-  (0, _vuex.mapState)(['phoneBlueToothCanUse', 'baseRequestUrl', 'charging', 'deviceNamePrefix', 'notifyIdPrefix',
-  'writeIdPrefix', 'serviceIdPrefix',
+  (0, _vuex.mapState)(['baseRequestUrl', 'deviceNamePrefix',
   'deviceImei', 'deviceName', 'deviceId',
-  'serviceId', 'notifyServiceId', 'writeServiceId', 'bleConnectedStatus', 'responseOrder', 'checkOnlineOrder',
+  'responseOrder',
   'confirmOrder',
-  'goodsObjectArray', 'commitGoodsArray', 'userId', 'bleConnected', 'mainUUID', 'writeUUID', 'notifyUUID']), {
+  'goodsObjectArray', 'commitGoodsArray', 'userId', 'bleConnected', 'mainUUID', 'writeUUID', 'notifyUUID',
+  'blueToothOpen']), {
 
     totalPrice: function totalPrice() {
       var pric = 0;
@@ -640,41 +651,39 @@ var _vuex = __webpack_require__(/*! vuex */ 12);function _objectSpread(target) {
       return pric;
     },
     buttonMsg: function buttonMsg() {
-      return this.cansubmit ? '立即支付' : '连接中';
+      return this.cansubmit && this.bleConnected ? '立即支付' : '订单加载中';
     } }),
 
   onShow: function onShow() {
-    //判断蓝牙是否需要连接
-    this.needConnect();
+
   },
-  onHide: function onHide() {
-    //关闭蓝牙
-    this.closeBle();
+  onLoad: function onLoad() {
+
   } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 
 /***/ 40:
-/*!*****************************************************************************************************************!*\
-  !*** C:/Users/bear/Documents/HBuilderProjects/fmj-lanya/pages/order/order.vue?vue&type=style&index=0&lang=css& ***!
-  \*****************************************************************************************************************/
+/*!**********************************************************************************************!*\
+  !*** C:/Users/blab/Desktop/fmj-lanya/pages/order/order.vue?vue&type=style&index=0&lang=css& ***!
+  \**********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-1!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/css-loader??ref--6-oneOf-1-2!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/postcss-loader/src??ref--6-oneOf-1-3!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib??vue-loader-options!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-custom-block-loader??ref--0-1!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./order.vue?vue&type=style&index=0&lang=css& */ 41);
-/* harmony import */ var _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_custom_block_loader_index_js_ref_0_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+/* harmony import */ var _HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../HBuilderX/plugins/uniapp-cli/node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!../../../HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-1!../../../HBuilderX/plugins/uniapp-cli/node_modules/css-loader??ref--6-oneOf-1-2!../../../HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!../../../HBuilderX/plugins/uniapp-cli/node_modules/postcss-loader/src??ref--6-oneOf-1-3!../../../HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!../../../HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./order.vue?vue&type=style&index=0&lang=css& */ 41);
+/* harmony import */ var _HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
 /***/ 41:
-/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-1!./node_modules/css-loader??ref--6-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-custom-block-loader??ref--0-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/bear/Documents/HBuilderProjects/fmj-lanya/pages/order/order.vue?vue&type=style&index=0&lang=css& ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-1!./node_modules/css-loader??ref--6-oneOf-1-2!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/blab/Desktop/fmj-lanya/pages/order/order.vue?vue&type=style&index=0&lang=css& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

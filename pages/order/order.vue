@@ -71,7 +71,7 @@
 				defaultImg: '../../static/prod.png',
 				youhuiCode: null,
 				placeholder: '兑换码不区分大小写',
-				cansubmit: false,
+				cansubmit: true,
 				canSubmitClass: 'submit-button',
 				canNotSubmitClass: 'can-not-submit'
 
@@ -79,8 +79,8 @@
 		},
 		methods: {
 			...mapMutations([
-				'setUserId', 'setDeviceId', 'setServiceId', 'setWriteServiceId', 'setNotifyServiceId', 'setCheckOnlineOrder',
-				'setDeviceName', 'setDeviceImei', 'setResponseOrder'
+				'setUserId', 'setDeviceId',
+				'setDeviceName', 'setDeviceImei', 'setResponseOrder', 'setIsFirst', 'setBlueToothOpen'
 			]),
 			changeRadioV() {
 				this.checkV = !this.checkV
@@ -101,40 +101,34 @@
 			gotoPay() {
 				var that = this
 				if (that.cansubmit) {
-					if (that.phoneBlueToothCanUse) {
-						//需要同意用户协议
-						if (!that.checkV) {
-							uni.showToast({
-								title: '请同意用户协议',
-								icon: 'none',
-								mask: true,
-								duration: 1500
-							});
-							return
-						}
-						//按钮不可点
-						that.cansubmit = false
-						if (that.bleConnectedStatus && that.writeServiceId != '') {
-							uni.showLoading({
-								title: '加载中'
-							});
-							that.startService()
-						} else {
-							//蓝牙未连接，重新连接
-							uni.showModal({
-								title: '',
-								content: '设备连接中,请稍后重试',
-								showCancel: false,
-								success: (res) => {
-									if (res.confirm) {
-										that.cansubmit = true
-									}
-								}
-							})
-							return
-						}
+					//需要同意用户协议
+					if (!that.checkV) {
+						uni.showToast({
+							title: '请同意用户协议',
+							icon: 'none',
+							mask: true,
+							duration: 1500
+						});
+						return
+					}
+					//按钮不可点
+					that.cansubmit = false
+					if (that.bleConnected) {
+						uni.showLoading({
+							title: '加载中'
+						})
+						that.commitOrderRequstNetWork()
 					} else {
-						that.judgeBlueToothCanUse()
+						uni.showModal({
+							title: '',
+							content: '设备连接中，请稍后',
+							showCancel: false,
+							success: (res) => {
+								if (res.confirm) {
+
+								}
+							}
+						})
 					}
 				}
 			},
@@ -179,54 +173,37 @@
 												if (chargeTimeOrder.length <= 40) {
 													uni.writeBLECharacteristicValue({
 														deviceId: that.deviceId,
-														serviceId: that.serviceId,
-														characteristicId: that.writeServiceId,
+														serviceId: '6E400001-B5A3-F393-E0A9-E50E24DCCA9E',
+														characteristicId: '6E400002-B5A3-F393-E0A9-E50E24DCCA9E',
 														value: String2Ab(chargeTimeOrder),
 														success(res) {
-															var chargeIntervalTimmerId = setInterval(function() {
-																if (chargeTimeOrder.indexOf(that.responseOrder) != -1) {
-																	clearInterval(chargeIntervalTimmerId)
-																	clearTimeout(chargeTimeOutTimmerId)
-																	uni.writeBLECharacteristicValue({
-																		deviceId: that.deviceId,
-																		serviceId: that.serviceId,
-																		characteristicId: that.writeServiceId,
-																		value: String2Ab(that.confirmOrder),
-																		success(res) {
-																			uni.closeBLEConnection({
-																				deviceId: that.deviceId,
-																				success(res) {}
-																			})
-																			uni.hideLoading();
-																			uni.reLaunch({
-																				url: '../buyfinish/buyfinish'
-																			})
-																		}
-																	})
-																}
-															}, 200)
-															var chargeTimeOutTimmerId = setTimeout(function() {
-																if (chargeTimeOrder.indexOf(that.responseOrder) === -1) {
-																	clearInterval(chargeIntervalTimmerId)
+															console.warn('下发真实命令成功', res)
+															uni.writeBLECharacteristicValue({
+																deviceId: that.deviceId,
+																serviceId: '6E400001-B5A3-F393-E0A9-E50E24DCCA9E',
+																characteristicId: '6E400002-B5A3-F393-E0A9-E50E24DCCA9E',
+																value: String2Ab(that.confirmOrder),
+																success(res) {
+																	console.warn('下发确认命令成功', res)
 																	uni.hideLoading();
-																	uni.showModal({
-																		title: '',
-																		content: '设备异常正在退款,请稍后重试',
-																		showCancel: false,
-																		success: (res) => {
-																			if (res.confirm) {
-																				//发起退款
-																				uni.reLaunch({
-																					url: '../index/index'
-																				})
-
-																			}
+																	uni.redirectTo({
+																		url: '../buyfinish/buyfinish',
+																		complete(res) {
+																			console.error('路由执行成功，结果为：', res)
 																		}
 																	})
+																},
+																fail(res) {
+																	console.warn('下发确认命令失败', res)
 																}
-															}, 3000);
+															})
+														},
+														fail(res) {
+															console.warn('下发真实命令失败', res)
+
 														}
 													})
+
 
 												} else {
 													let orderTime = Math.floor(chargeTimeOrder.length / 40)
@@ -235,56 +212,29 @@
 													for (let i = 0; i <= orderTime; i++) {
 														uni.writeBLECharacteristicValue({
 															deviceId: that.deviceId,
-															serviceId: that.serviceId,
-															characteristicId: that.writeServiceId,
+															serviceId: '6E400001-B5A3-F393-E0A9-E50E24DCCA9E',
+															characteristicId: '6E400002-B5A3-F393-E0A9-E50E24DCCA9E',
 															value: String2Ab(chargeTimeOrder.substring(i * 40, (i + 1) * 40)),
 															success(res) {
 																//延时并拼接响应
 																sleep(200)
 																//在最后一包发送完以后，监听响应
 																if (i == orderTime) {
-																	var chargeTimeOutTimmerId = setTimeout(function() {
-																		if (chargeTimeOrder.indexOf(that.responseOrder) === -1 || that.responseOrder === '') {
-																			clearInterval(chargeIntervalTimmerId)
+																	uni.writeBLECharacteristicValue({
+																		deviceId: that.deviceId,
+																		serviceId: '6E400001-B5A3-F393-E0A9-E50E24DCCA9E',
+																		characteristicId: '6E400002-B5A3-F393-E0A9-E50E24DCCA9E',
+																		value: String2Ab(that.confirmOrder),
+																		success(res) {
 																			uni.hideLoading();
-																			uni.showModal({
-																				title: '',
-																				content: '设备异常正在退款,请稍后重试',
-																				showCancel: false,
-																				success: (res) => {
-																					//发起退款
-																					if (res.confirm) {
-																						uni.reLaunch({
-																							url: '../index/index'
-																						})
-																					}
+																			uni.redirectTo({
+																				url: '../buyfinish/buyfinish',
+																				complete(res) {
+																					console.error('路由执行成功，结果为：', res)
 																				}
 																			})
 																		}
-																	}, 3000)
-																	//定时判断是否相同
-																	var chargeIntervalTimmerId = setInterval(function() {
-																		if (that.responseOrder != '' && chargeTimeOrder.indexOf(that.responseOrder) != -1) {
-																			clearInterval(chargeIntervalTimmerId)
-																			clearTimeout(chargeTimeOutTimmerId)
-																			uni.writeBLECharacteristicValue({
-																				deviceId: that.deviceId,
-																				serviceId: that.serviceId,
-																				characteristicId: that.writeServiceId,
-																				value: String2Ab(that.confirmOrder),
-																				success(res) {
-																					uni.closeBLEConnection({
-																						deviceId: that.deviceId,
-																						success(res) {}
-																					})
-																					uni.hideLoading();
-																					uni.reLaunch({
-																						url: '../buyfinish/buyfinish'
-																					})
-																				}
-																			})
-																		}
-																	}, 200)
+																	})
 																}
 															}
 														})
@@ -370,141 +320,191 @@
 			},
 			connectBle() {
 				var that = this
-				uni.openBluetoothAdapter({
-					success(res) {
-						if (that.deviceId && that.deviceId != '') {
-							uni.stopBluetoothDevicesDiscovery({
-								success(res) {
-									//连接蓝牙
-									uni.createBLEConnection({
-										deviceId: that.deviceId,
-										success(res) {
-											console.log('连接蓝牙成功', res)
-											//即使知道了特征id也要搜索一下
-											uni.getBLEDeviceCharacteristics({
-												deviceId: that.deviceId,
-												serviceId: that.mainUUID,
-												success(res) {
-													uni.notifyBLECharacteristicValueChange({
-														state: true,
-														deviceId: that.deviceId,
-														serviceId: that.mainUUID,
-														characteristicId: that.notifyUUID,
-														success(res) {
-															console.log('开启监听服务成功')
-															//写入Q01
-															uni.writeBLECharacteristicValue({
-																deviceId: that.deviceId,
-																serviceId: that.mainUUID,
-																characteristicId: that.writeUUID,
-																value: String2Ab(that.checkOnlineOrder),
-																success(res) {
-																	console.log('writeBLECharacteristicValue success', res.errMsg)
-																}
-															})
-														}
-													})
-												}
-											})
-										}
-									})
-								}
-							})
+				//1.判断手机蓝牙是否打开
+				console.warn('buy页面页面显示获取到的蓝牙状态为', that.blueToothOpen)
+				if (that.blueToothOpen) {
+					if (that.deviceId != '') {
+						//如果设备id存在就直接连接，同时下发Q01
+						uni.createBLEConnection({
+							deviceId: that.deviceId,
+							success(res) {
+								console.log('连接蓝牙成功', res)
+								//即使知道了特征id也要搜索一下
+								uni.getBLEDeviceCharacteristics({
+									deviceId: that.deviceId,
+									serviceId: '6E400001-B5A3-F393-E0A9-E50E24DCCA9E',
+									success(res) {
+										uni.notifyBLECharacteristicValueChange({
+											state: true,
+											deviceId: that.deviceId,
+											serviceId: '6E400001-B5A3-F393-E0A9-E50E24DCCA9E',
+											characteristicId: '6E400003-B5A3-F393-E0A9-E50E24DCCA9E',
+											success(res) {
+												console.log('开启监听服务成功')
+												//写入Q01
+												uni.writeBLECharacteristicValue({
+													deviceId: that.deviceId,
+													serviceId: '6E400001-B5A3-F393-E0A9-E50E24DCCA9E',
+													characteristicId: '6E400002-B5A3-F393-E0A9-E50E24DCCA9E',
+													value: String2Ab('AABB00065130313D3140CB'),
+													success(res) {
+														console.info('下发在线命令成功')
+														//只要调用了就不是第一次了
+														that.setIsFirst(false)
+													}
+												})
+											}
+										})
+									}
+								})
+							},
+							fail(res) {
+								console.warn('重新连接后错误', res)
 
-						} else {
-							var searchTimeoutId = setTimeout(function() {
-								if (that.deviceId == '') {
-									console.error('未搜索到设备')
-									uni.stopBluetoothDevicesDiscovery({
-										success(res) {
-											uni.showModal({
-												title: '',
-												content: '未搜索到设备,请靠近设备后重试',
-												showCancel: false,
-												success: (res) => {
-													if (res.confirm) {
-														uni.reLaunch({
-															url: '../index/index'
+							}
+						})
+
+					} else {
+						//如果设备id不存在就信搜索设备后连接
+						//1. 超时提示
+						var searchTimeoutId = setTimeout(function() {
+							if (that.deviceId == '') {
+								console.error('未搜索到设备')
+								uni.stopBluetoothDevicesDiscovery({
+									success(res) {
+										uni.showModal({
+											title: '',
+											content: '未搜索到设备,请靠近设备后重试',
+											showCancel: false,
+											success: (res) => {
+												if (res.confirm) {
+													uni.reLaunch({
+														url: '../index/index'
+													})
+
+												}
+											}
+										})
+									}
+								})
+							}
+						}, 5000)
+						uni.startBluetoothDevicesDiscovery({
+							success(res) {
+								uni.onBluetoothDeviceFound(function(res) {
+									let device = res.devices[0]
+									console.log('device', device)
+									if (device.name != '' && device.name == that.deviceNamePrefix + that.deviceImei) {
+										clearTimeout(searchTimeoutId)
+										that.setDeviceId(device.deviceId)
+										uni.stopBluetoothDevicesDiscovery({
+											success(res) {
+												console.log('找到设备后关闭发现服务成功', device.deviceId)
+												//连接蓝牙
+												uni.createBLEConnection({
+													deviceId: device.deviceId,
+													success(res) {
+														console.log('连接蓝牙成功', res)
+														//即使知道了特征id也要搜索一下
+														uni.getBLEDeviceCharacteristics({
+															deviceId: device.deviceId,
+															serviceId: '6E400001-B5A3-F393-E0A9-E50E24DCCA9E',
+															success(res) {
+																uni.notifyBLECharacteristicValueChange({
+																	state: true,
+																	deviceId: device.deviceId,
+																	serviceId: '6E400001-B5A3-F393-E0A9-E50E24DCCA9E',
+																	characteristicId: '6E400003-B5A3-F393-E0A9-E50E24DCCA9E',
+																	success(res) {
+																		console.log('开启监听服务成功')
+																		//写入Q01
+																		uni.writeBLECharacteristicValue({
+																			deviceId: device.deviceId,
+																			serviceId: '6E400001-B5A3-F393-E0A9-E50E24DCCA9E',
+																			characteristicId: '6E400002-B5A3-F393-E0A9-E50E24DCCA9E',
+																			value: String2Ab('AABB00065130313D3140CB'),
+																			success(res) {
+																				console.info('下发Q01成功')
+																				//只要调用了就不是第一次了
+																				that.setIsFirst(false)
+																			}
+																		})
+																	}
+																})
+															}
 														})
 
 													}
-												}
-											})
-										}
-									})
-								}
-							}, 5000)
-							uni.startBluetoothDevicesDiscovery({
-								success(res) {
-									uni.onBluetoothDeviceFound(function(res) {
-										let device = res.devices[0]
-										console.log('device', device)
-										if (device.name != '' && device.name == that.deviceNamePrefix + that.deviceImei) {
-											that.setDeviceId(device.deviceId)
-											clearTimeout(searchTimeoutId)
-											uni.stopBluetoothDevicesDiscovery({
-												success(res) {
-													console.log('找到设备后关闭发现服务成功', device.deviceId)
-													//连接蓝牙
-													uni.createBLEConnection({
-														deviceId: device.deviceId,
-														success(res) {
-															console.log('连接蓝牙成功', res)
-															//即使知道了特征id也要搜索一下
-															uni.getBLEDeviceCharacteristics({
-																deviceId: device.deviceId,
-																serviceId: that.mainUUID,
-																success(res) {
-																	uni.notifyBLECharacteristicValueChange({
-																		state: true,
-																		deviceId: device.deviceId,
-																		serviceId: that.mainUUID,
-																		characteristicId: that.notifyUUID,
-																		success(res) {
-																			console.log('开启监听服务成功')
-																			//写入Q01
-																			uni.writeBLECharacteristicValue({
-																				deviceId: device.deviceId,
-																				serviceId: that.mainUUID,
-																				characteristicId: that.writeUUID,
-																				value: String2Ab(that.checkOnlineOrder),
-																				success(res) {
-																					console.log('writeBLECharacteristicValue success', res.errMsg)
-																				}
-																			})
-																		}
-																	})
-																}
-															})
+												})
+											}
+										})
+									}
+								})
+							}
+						})
 
-														}
-													})
-												}
-											})
-										}
-									})
-								}
-							})
+					}
 
+				} else {
+					//未开启蓝牙提示开启蓝牙
+					uni.showModal({
+						title: '提示',
+						content: '请开启手机蓝牙',
+						showCancel: false,
+						success: (res) => {
+							if (res.confirm) {
+								console.info('提示用户开启蓝牙后用户点击确认')
+							}
 						}
+					})
+				}
+			},
+			getAndListenBTState() {
+				var that = this
+				uni.openBluetoothAdapter({
+					success(res) {
+						console.warn('开启适配器状态成功，意味着蓝牙开启', res)
+						that.setBlueToothOpen(true)
+						that.connectBle()
+					},
+					fail(res) {
+						//开启失败的话说明没有开启手机蓝牙
+						console.warn('开启适配器失败，意味着没有开启蓝牙', res)
+						that.connectBle()
 					}
 				})
 			},
-			needConnect() {
-				if (!bleConnected) {
-					//需要重新连接
-					this.connectBle()
-				}
+			listenResponseOrder() {
+				var that = this
+				let timeLast = 0
+				uni.onBLECharacteristicValueChange(function(res) {
+					if (new Date().getTime() - timeLast < 200) {
+						that.setResponseOrder(that.responseOrder + Ab2String(res.value))
+						console.log('分包相应的结果合并为', that.responseOrder)
+					} else {
+						timeLast = new Date().getTime()
+						let resOrder = Ab2String(res.value)
+						if (resOrder.indexOf('5130383D') != -1) {
+							let batteryNumber = resOrder.substring(8, 12)
+							that.setbattery(parseInt(String.fromCharCode(parseInt(batteryNumber.substring(0, 2), 16)) + String.fromCharCode(
+								parseInt(batteryNumber.substring(2), 16))))
+						} else {
+							that.setResponseOrder(resOrder)
+						}
+						console.log('监听到设备的响应为', resOrder)
+					}
+
+				})
 			}
 
 		},
 		computed: {
-			...mapState(['phoneBlueToothCanUse', 'baseRequestUrl', 'charging', 'deviceNamePrefix', 'notifyIdPrefix',
-				'writeIdPrefix', 'serviceIdPrefix',
+			...mapState(['baseRequestUrl', 'deviceNamePrefix',
 				'deviceImei', 'deviceName', 'deviceId',
-				'serviceId', 'notifyServiceId', 'writeServiceId', 'bleConnectedStatus', 'responseOrder', 'checkOnlineOrder',
+				'responseOrder',
 				'confirmOrder',
-				'goodsObjectArray', 'commitGoodsArray', 'userId', 'bleConnected', 'mainUUID', 'writeUUID', 'notifyUUID'
+				'goodsObjectArray', 'commitGoodsArray', 'userId', 'bleConnected', 'mainUUID', 'writeUUID', 'notifyUUID',
+				'blueToothOpen'
 			]),
 			totalPrice() {
 				let pric = 0
@@ -516,18 +516,15 @@
 				return pric
 			},
 			buttonMsg() {
-				return this.cansubmit ? '立即支付' : '连接中'
+				return this.cansubmit && this.bleConnected ? '立即支付' : '订单加载中'
 			}
 		},
 		onShow() {
-			//判断蓝牙是否需要连接
-			this.needConnect()
-		},
-		onHide() {
-			//关闭蓝牙
-			this.closeBle()
-		}
 
+		},
+		onLoad() {
+
+		}
 	}
 </script>
 

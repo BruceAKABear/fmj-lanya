@@ -12,6 +12,7 @@
 	} from './utils/index.js'
 	export default {
 		onLaunch: function() {
+			this.getPLatform()
 			//首先检查是否有更新
 			this.checkUpdateAndApply()
 			//小程序启动时开始监听
@@ -20,45 +21,59 @@
 			this.listenResponseOrder()
 		},
 		onShow: function() {
-			//应用显示
+			//每次应用显示时判断蓝牙是否打开
+			//this.getAndListenBTState()
+
 		},
 		methods: {
 			...mapMutations([
-				'setBlueToothOpen', 'setBleConnected', 'setResponseOrder', 'setOpenLocation', 'setbattery'
+				'setBlueToothOpen', 'setBleConnected', 'setResponseOrder', 'setOpenLocation', 'setbattery', 'setPlatform'
 			]),
+			getPLatform() {
+				var that = this
+				uni.getSystemInfo({
+					success: function(res) {
+						that.setPlatform(res.platform)
+					}
+				})
+			},
 			/**
 			 * 开启蓝牙适配器，并监听手机蓝牙是否可用
 			 */
 			openBlueToothAdapterAndListenState() {
-				var that = this
-				uni.openBluetoothAdapter({
-					success(res) {
-						that.setBlueToothOpen(true)
-					},
-					fail(res) {
-						that.setBlueToothOpen(false)
-					}
-				})
-				uni.onBluetoothAdapterStateChange(function(res) {
-					that.setBlueToothOpen(res.available)
-					if (!res.available) {
-						console.warn('蓝牙被关闭了')
-						uni.showModal({
-							title: '',
-							content: '使用小程序期间请保持蓝牙开启',
-							showCancel: false,
-							success: (res) => {
-								if (res.confirm) {
-									console.warn('用户关闭蓝牙后点击确认')
-								}
-							}
-						})
-					} else {
-						console.warn('蓝牙打开了')
-						//蓝牙打开以后连接蓝牙
-						// connectBle(that)
-					}
-				})
+				// var that = this
+				// console.log('111111111111111111')
+
+				// uni.openBluetoothAdapter({
+				// 	success(res) {
+				// 		console.log('2222222222', res)
+
+
+				// 	},
+				// 	fail(res) {
+				// 		console.log('3333333333', res)
+				// 	}
+				// })
+				// uni.onBluetoothAdapterStateChange(function(res) {
+				// 	that.setBlueToothOpen(res.available)
+				// 	if (!res.available) {
+				// 		console.warn('蓝牙被关闭了')
+				// 		uni.showModal({
+				// 			title: '',
+				// 			content: '使用小程序期间请保持蓝牙开启',
+				// 			showCancel: false,
+				// 			success: (res) => {
+				// 				if (res.confirm) {
+				// 					console.warn('用户关闭蓝牙后点击确认')
+				// 				}
+				// 			}
+				// 		})
+				// 	} else {
+				// 		console.warn('蓝牙打开了')
+				// 		//蓝牙打开以后连接蓝牙
+				// 		// connectBle(that)
+				// 	}
+				// })
 			},
 			/**
 			 * 监听手机蓝牙连接状态
@@ -66,6 +81,8 @@
 			listenBLEConnectionStateChange() {
 				var that = this
 				uni.onBLEConnectionStateChange(function(res) {
+					console.warn('蓝牙连接状态发生改变', res)
+
 					that.setBleConnected(res.connected)
 				})
 			},
@@ -84,6 +101,7 @@
 						let resOrder = Ab2String(res.value)
 						if (resOrder.indexOf('5130383D') != -1) {
 							let batteryNumber = resOrder.substring(8, 12)
+							
 							that.setbattery(parseInt(String.fromCharCode(parseInt(batteryNumber.substring(0, 2), 16)) + String.fromCharCode(
 								parseInt(batteryNumber.substring(2), 16))))
 						} else {
@@ -155,7 +173,7 @@
 
 		},
 		computed: {
-			...mapState(['responseOrder', 'deviceId'])
+			...mapState(['responseOrder', 'deviceId', 'blueToothOpen'])
 		}
 	}
 </script>
